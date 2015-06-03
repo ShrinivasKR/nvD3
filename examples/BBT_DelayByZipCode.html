@@ -397,6 +397,9 @@
                 .y(function (d) {
                     return d.value
                 })
+//                .valueFormat(function (d) {
+//                    return formatoHHMMSS(d)
+//                })
                 .staggerLabels(false)
                 //.staggerLabels(historicalBarChart[0].values.length > 8)
                 .showValues(true)
@@ -410,11 +413,17 @@
                 .attr("y", 20)
                 .attr("text-anchor", "middle")
                 .text("Average Delay by Zip Code");
-
             nv.utils.windowResize(chart.update);
 
             return chart;
         });
+
+        function formatoHHMMSS(secs) {
+            var hours = parseInt(secs / 3600) % 24;
+            var minutes = parseInt(secs / 60) % 60;
+            var seconds = secs % 60;
+            return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+        };
     </script>
 </body>
 
