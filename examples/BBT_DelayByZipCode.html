@@ -397,16 +397,16 @@
                 .y(function (d) {
                     return d.value
                 })
-//                .valueFormat(function (d) {
-//                    return formatoHHMMSS(d)
-//                })
+                //                .valueFormat(function (d) {
+                //                    return formatoHHMMSS(d)
+                //                })
                 .staggerLabels(false)
                 //.staggerLabels(historicalBarChart[0].values.length > 8)
                 .showValues(true)
                 .duration(250);
             chart.yAxis.axisLabel("Seconds delayed");
             chart.xAxis.axisLabel("Zip Code").rotateLabels(-45);
-//            .axisLabelDistance(0)
+            //            .axisLabelDistance(0)
             d3.select('#chart1 svg')
                 .datum(historicalBarChart)
                 .call(chart).append("text")
