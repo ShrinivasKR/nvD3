@@ -37,7 +37,7 @@
     <script>
         historicalBarChart = [
             {
-                key: "Cumulative Return",
+                key: "DelaybyZip",
                 values: [
                     {
                         "label": "98028",
@@ -405,7 +405,8 @@
                 .showValues(true)
                 .duration(250);
             chart.yAxis.axisLabel("Seconds delayed");
-            chart.xAxis.axisLabel("Zip Code").axisLabelDistance(-10).rotateLabels(-45);
+            chart.xAxis.axisLabel("Zip Code").rotateLabels(-45);
+//            .axisLabelDistance(0)
             d3.select('#chart1 svg')
                 .datum(historicalBarChart)
                 .call(chart).append("text")
